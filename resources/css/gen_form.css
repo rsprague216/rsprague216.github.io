@@ -9,6 +9,10 @@ body {
     background-color: cornflowerblue;
 }
 
+a {
+    cursor: pointer;
+}
+
 .body-align {
     position: absolute;
     top: 50%;
@@ -98,4 +102,9 @@ article {
 main p {
     margin-bottom: 10px;
     text-align: justify;
+}
+
+li {
+    margin-left: 20px;
+    margin-bottom: 10px;
 }
