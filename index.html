@@ -1,89 +1,94 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <title>Portfolio Site</title>
-    <link rel="stylesheet" type="text/css" href="./resources/css/gen_form.css">
-    <link rel="stylesheet" type="text/css" href="./resources/css/info_form.css">
-</head>
-<body>
-    <div class='body-align'>
-        <header>
-            <h1>Portfolio - Landing Page</h1>
-        </header>
-        <nav>
-            <ul>
-                <li><a id="current">About Me</a></li>
-                <li><a href="https://rsprague216.github.io/Password_Generator/">Password Generator</a></li>
-                <li><a href="#">Dummy 2</a></li>
-                <li><a href="#">Dummy 3</a></li>
-                <li><a href="#">Dummy 4</a></li>
-            </ul>
-        </nav>
-        <main>
-          <section>
-            <article>
-                <h2>Hi, I'm Ryan—a Software and Web Developer.</h2>
-                <p>
-                    This is a simple portfolio site I put together to showcase my work and projects. 
-                    Currently, it is a work in progress, but I plan to add more content soon.
-                </p>
-                <p>
-                    Feel free to explore the links to the left to see some of my projects, including a password generator (more projects coming).
-                </p>
-            </article>
-            <article>
-                <h2>Background and Professional Experience</h2>
-                <p>
-                    I have been a student at both Austin Community College and Texas State University,
-                    and graduated from the latter with a Bachelor of Science in Computer Science in 2024.
-                </p>
-                <p>
-                    My coursework has included a variety of programming languages and technologies, including
-                    Object Orinted Programming with Java and C++, Data Structures and Algorithms, Database Design
-                    and Management, Web Development, Software Engeineering, and Machine Learning.
-                </p>
-                <p>
-                    My work experience is primarily with SuiteScript/JavaScript in NetSuite development, where
-                    I have been involved in various projects, including creating custom scripts and
-                    automating processes according to company requirements. 
-                </p>
-                <p>
-                    My ultimate career goal is to get into full stack development, working in both the
-                    front-end and the back-end to design web pages and apps.
-                </p>
-            </article>
-            <article>
-                <h2>Skills</h2>
-                <p>
-                    Accross my academic and professional career, I have gained experience in the following languages and technologies:
-                </p>
-                <ul>
-                    <li>HTML</li>
-                    <li>CSS</li>
-                    <li>JavaScript</li>
-                    <li>Java</li>
-                </ul>
-                <ul>
-                    <li>C++</li>
-                    <li>C#</li>
-                    <li>Python</li>
-                    <li>SQL</li>
-                </ul>
-            </article>
-            <article>
-                <h2>Contact Info &amp; Resume</h2>
-                <p>Email: <a href="mailto:rsprague.work@gmail.com">rsprague.work@gmail.com</a></p>
-                <p>Phone: 512-656-4666</p>
-                <p>Social Media: <a href="https://www.linkedin.com/in/ryan-sprague-8a7316169/" target="_blank">LinkedIn</a></p>
-                <p>GitHub: <a href="https://github.com/rsprague216" target="_blank">rsprague216</a></p>
-                <p>I have provided my <a href="./resources/pdf/Ryan_Sprague_resume.pdf" target="_blank">resume</a> to view/download as well.</p>
-            </article>
-          </section>
-        </main>
-        <footer>
-            <small>&copy; 2025 Ryan Sprague</small>
-        </footer>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - Landing Page</title>
+    <link rel="stylesheet" href="./resources/css/gen_form.css" />
+    <link rel="stylesheet" href="./resources/css/landing_style.css" />
+  </head>
+  <body>
+
+    <header>
+      <div class="header">
+        <div class="title">
+          <a href="index.html">
+            <h1>Ryan Sprague's Portfolio</h1>
+          </a>
+        </div>
+        <ul class="nav">
+          <li><a class="extra" href="index.html">Home</a></li>
+          <li><a href="#">About Me</a></li>
+          <li><a href="#">Projects</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </div>
+    </header>
+
+    <div class="content">
+
+      <main class="info">
+
+        <div class="about-me container">
+          <div class="image-container">
+            <img src="./resources/images/ryan_grad.jpg" alt="photo of Ryan Sprague" />
+          </div>
+
+          <div class="info-text">
+            <h2>My name is Ryan—a Full Stack Software and Web Developer.</h2>
+            <p>I have experience with several languages for both front and back end development, including C#, HTML, JavaScript, Python, and SQL, and have used these languages in both my education and my personal projects.</p>
+            <p>I am an avid reader and fantasy geek, a lover of the outdoors, and enjoy a healthy, active lifestyle.  I am passionate about learning new things, and am always working on at least one project.</p>
+            <p>The bulk of my professional experience is with JavaScript and SQL as a NetSuite Developer at Bridgepoint Consulting.</p>
+          </div>
+        </div>
+
+        <div class="education container">
+          <div class="info-text">
+            <h2>I earned my Bachelors in Computer Science from Texas State University.</h2>
+            <p>Though I began my journey in computer science at Austin Community college, I transferred to Texas State and declared my major in 2020.  I ultimately graduated with my BS in December 2024.</p>
+            <p>My coursework has included a variety of programming languages and technologes, covering Object Oriented Programing, Data Structures and Algorithms, and Database Design and Management.  I was first introduced to HTML in a Web Design class all the way back in middle school.</p>
+          </div>
+
+          <div class="image-container">
+            <img src="./resources/images/old_main.jpg" alt="photo of Texas State University" />
+          </div>
+        </div>
+
+      </main>
+
+      <hr />
+
+      <section class="projects">
+
+        <h2>Recent Projects</h2>
+
+        <a class="project container" href="https://github.com/rsprague216/DnD_manager" target="_blank">
+          <div class="name">D&D Character Manager</div>
+          <div class="technology">ASP.NET and MySQL</div>
+          <div class="timeframe">Apr 2025 -</div>
+        </a>
+
+        <a class="project container" href="https://rsprague216.github.io/Password_Generator/" target="_blank">
+          <div class="name">Password Generator</div>
+          <div class="technology">HTML, CSS, and JavaScript</div>
+          <div class="timeframe">Feb 2025 - Mar 2025</div>
+        </a>
+
+        <!-- <div class="project container">
+          <h2>Project Name</h2>
+        </div> -->
+        
+      </section>
+
     </div>
-    <!-- <script src="./resources/javascript/playground.js"></script> -->
-</body>
+
+    <footer>
+      <p class="copyright">&copy; 2025 Ryan Sprague</p>
+      <p class="copyright-abbr">&copy; 2025</p>
+      <ul class="social">
+        <li><a href="https://www.linkedin.com/in/ryan-sprague-8a7316169/" target="_blank">LinkedIn</a></li>
+        <li><a href="https://github.com/rsprague216" target="_blank">GitHub</a></li>
+      </ul>
+    </footer>
+
+  </body>
 </html>
