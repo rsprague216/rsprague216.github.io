@@ -94,6 +94,12 @@
         height: 80vw;
         border: none;
         border-radius: 0;
+        margin: 0;
+    }
+
+    .info-text {
+        margin-top: 0.5rem;
+        margin-bottom: 1.5rem;
     }
 
     .info-text h2 {
