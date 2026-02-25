@@ -10,9 +10,9 @@ interface HeroSectionProps {
 function HeroSection({ name, title, bio, imageSrc }: HeroSectionProps) {
   return (
     <section className="pt-10 pb-10 flex flex-col gap-8">
-      <div className="flex flex-col sm:flex-row items-start gap-10">
+      <div className="flex flex-col sm:flex-row items-start sm:items-stretch gap-10">
         {imageSrc && (
-          <div className="w-48 h-48 shrink-0 rounded-lg overflow-hidden">
+          <div className="w-48 h-48 sm:w-auto sm:h-auto sm:max-h-64 aspect-square shrink-0 rounded-lg overflow-hidden">
             <img src={imageSrc} alt={name} className="w-full h-full object-cover object-top scale-125 origin-top" />
           </div>
         )}

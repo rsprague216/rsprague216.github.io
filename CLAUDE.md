@@ -42,7 +42,7 @@ Uses `HashRouter` (not `BrowserRouter`) so GitHub Pages never needs to serve dee
 - `src/App.tsx` — Root component; sets up `HashRouter`, layout route, and all four routes
 
 ### Layout shell (`src/components/layout/`)
-- `src/components/layout/Header.tsx` — Site header with `NavLink` navigation (active link highlighted)
+- `src/components/layout/Header.tsx` — Site header with `NavLink` navigation (active link highlighted). Responsive: desktop (`sm:`) shows inline nav links; mobile shows a hamburger button that toggles a right-aligned dropdown menu (closed by default, closes on nav)
 - `src/components/layout/Main.tsx` — Layout shell; renders `<Outlet />` for the active route (`max-w-5xl`, `py-10`)
 - `src/components/layout/Footer.tsx` — Site footer with dynamic copyright year and social links
 
@@ -55,7 +55,7 @@ Uses `HashRouter` (not `BrowserRouter`) so GitHub Pages never needs to serve dee
 ### Presenters (`src/components/` — organized by feature subdirectory)
 
 **`src/components/home/`** — consumed only by `Home.tsx`
-- `src/components/home/HeroSection.tsx` — Hero with photo, name, title, bio paragraphs, and CTA buttons. Props: `name: string`, `title: string`, `bio: string[]`, `imageSrc?: string`. Layout: image + text side by side (top row), buttons full-width (bottom row).
+- `src/components/home/HeroSection.tsx` — Hero with photo, name, title, bio paragraphs, and CTA buttons. Props: `name: string`, `title: string`, `bio: string[]`, `imageSrc?: string`. Layout: image + text side by side (top row), buttons full-width (bottom row). Image is a square (`aspect-square`) that stretches to match the text column height via `sm:items-stretch`, capped at `sm:max-h-64` to prevent overflow on narrow viewports; mobile shows a fixed `w-48 h-48` square.
 - `src/components/home/FeaturedProjects.tsx` — "Featured Projects" section heading + card grid; handles loading/error states
 
 **`src/components/projects/`** — consumed by `Projects.tsx` and `home/FeaturedProjects.tsx`
@@ -71,6 +71,7 @@ Uses `HashRouter` (not `BrowserRouter`) so GitHub Pages never needs to serve dee
 
 ### Static assets
 - `public/ryan_grad.jpg` — Headshot photo used in the hero; referenced as `/ryan_grad.jpg`
+- `public/favicon_io/` — Favicon set (ICO, 16×16, 32×32 PNG, Apple touch icon, Android chrome PNGs, `site.webmanifest`); generated via favicon.io using the Coda font; linked in `index.html`
 
 ### Other
 - `src/index.css` — `@import "tailwindcss"` + global `html` styles: `scrollbar-gutter: stable` (prevents layout shift when scrollbar appears/disappears), `background-color: #020617` (fills gutter with `slate-950` so it's invisible), and custom scrollbar styling (`slate-950` track, `slate-700` thumb)
