@@ -10,21 +10,26 @@ interface HeroSectionProps {
 function HeroSection({ name, title, bio, imageSrc }: HeroSectionProps) {
   return (
     <section className="pt-10 pb-10 flex flex-col gap-8">
-      <div className="flex flex-col sm:flex-row items-start sm:items-stretch gap-10">
+      <div className="flex flex-row items-center sm:items-stretch gap-6 sm:gap-10">
         {imageSrc && (
-          <div className="w-48 h-48 sm:w-auto sm:h-auto sm:max-h-64 aspect-square shrink-0 rounded-lg overflow-hidden">
+          <div className="w-20 h-20 sm:w-auto sm:h-auto sm:max-h-64 aspect-square shrink-0 rounded-lg overflow-hidden">
             <img src={imageSrc} alt={name} className="w-full h-full object-cover object-top scale-125 origin-top" />
           </div>
         )}
         <div className="flex-1">
-          <h1 className="text-5xl font-bold text-slate-100 mb-4">{name}</h1>
-          <p className="text-xl text-slate-400 mb-6">{title}</p>
-          <div className="flex flex-col gap-4">
+          <h1 className="text-3xl sm:text-5xl font-bold text-slate-100 mb-2 sm:mb-4">{name}</h1>
+          <p className="text-base sm:text-xl text-slate-400">{title}</p>
+          <div className="hidden sm:flex flex-col gap-4 mt-6">
             {bio.map((p, i) => (
               <p key={i} className="text-slate-300">{p}</p>
             ))}
           </div>
         </div>
+      </div>
+      <div className="flex flex-col gap-4 sm:hidden">
+        {bio.map((p, i) => (
+          <p key={i} className="text-slate-300">{p}</p>
+        ))}
       </div>
       <div className="flex gap-4">
         <Link

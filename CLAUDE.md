@@ -55,7 +55,7 @@ Uses `HashRouter` (not `BrowserRouter`) so GitHub Pages never needs to serve dee
 ### Presenters (`src/components/` — organized by feature subdirectory)
 
 **`src/components/home/`** — consumed only by `Home.tsx`
-- `src/components/home/HeroSection.tsx` — Hero with photo, name, title, bio paragraphs, and CTA buttons. Props: `name: string`, `title: string`, `bio: string[]`, `imageSrc?: string`. Layout: image + text side by side (top row), buttons full-width (bottom row). Image is a square (`aspect-square`) that stretches to match the text column height via `sm:items-stretch`, capped at `sm:max-h-64` to prevent overflow on narrow viewports; mobile shows a fixed `w-48 h-48` square.
+- `src/components/home/HeroSection.tsx` — Hero with photo, name, title, bio paragraphs, and CTA buttons. Props: `name: string`, `title: string`, `bio: string[]`, `imageSrc?: string`. Layout varies by breakpoint: **mobile** — image (`w-20 h-20`) + name/title in a row, bio paragraphs full-width below; **desktop (`sm:`)** — image (stretched, `sm:max-h-64`) beside a text column containing name, title, and bio; buttons full-width below on both. Bio is rendered twice (once per breakpoint) with `hidden sm:flex` / `sm:hidden` to achieve the layout shift without CSS grid.
 - `src/components/home/FeaturedProjects.tsx` — "Featured Projects" section heading + card grid; handles loading/error states
 
 **`src/components/projects/`** — consumed by `Projects.tsx` and `home/FeaturedProjects.tsx`
