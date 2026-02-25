@@ -1,5 +1,6 @@
-import type { Project } from '../data/projects'
-import ProjectCard from './ProjectCard'
+import type { Project } from '../../data/projects'
+import ProjectCard from '../projects/ProjectCard'
+import ProjectCardSkeleton from '../projects/ProjectCardSkeleton'
 
 interface FeaturedProjectsProps {
   projects: Project[]
@@ -15,7 +16,10 @@ function FeaturedProjects({ projects, loading, error }: FeaturedProjectsProps) {
         <p className="text-slate-500 text-sm">Could not load projects: {error}</p>
       )}
       {loading && !error && (
-        <p className="text-slate-500 text-sm">Loading...</p>
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+          <ProjectCardSkeleton />
+          <ProjectCardSkeleton />
+        </div>
       )}
       {!loading && !error && (
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">

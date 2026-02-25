@@ -1,1 +1,24 @@
 @import "tailwindcss";
+
+html {
+  scrollbar-gutter: stable;
+  background-color: #020617; /* slate-950 — fills the gutter so it blends with the page */
+  scrollbar-color: #334155 #020617; /* Firefox: thumb (slate-700) | track (slate-950) */
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #020617; /* slate-950 */
+}
+
+::-webkit-scrollbar-thumb {
+  background: #334155; /* slate-700 */
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #475569; /* slate-600 */
+}

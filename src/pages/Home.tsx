@@ -1,7 +1,7 @@
 import { useGitHubRepos } from '../hooks/useGitHubRepos'
 import { featuredRepos } from '../data/featured'
-import HeroSection from '../components/HeroSection'
-import FeaturedProjects from '../components/FeaturedProjects'
+import HeroSection from '../components/home/HeroSection'
+import FeaturedProjects from '../components/home/FeaturedProjects'
 
 function Home() {
   const { repos, loading, error } = useGitHubRepos()

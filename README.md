@@ -1,73 +1,51 @@
-# React + TypeScript + Vite
+# rsprague216.github.io
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Personal developer portfolio for Ryan Sprague — built with Vite + React + TypeScript + TailwindCSS v4.
 
-Currently, two official plugins are available:
+Live at **[rsprague216.github.io](https://rsprague216.github.io)**
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Stack
 
-## React Compiler
+- [Vite](https://vitejs.dev/) — build tool & dev server
+- [React](https://react.dev/) + [TypeScript](https://www.typescriptlang.org/)
+- [TailwindCSS v4](https://tailwindcss.com/) — utility-first styling (zero-config)
+- [React Router v7](https://reactrouter.com/) — hash-based routing for GitHub Pages
+- [GitHub Pages](https://pages.github.com/) — hosting via `gh-pages` branch
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Features
 
-## Expanding the ESLint configuration
+- Hero section with photo, bio, and CTA buttons
+- Featured projects pulled live from the GitHub API
+- Full project listing with search, tech-tag filtering, and sort — filter bar collapses to keep the UI clean
+- Animated skeleton loading states
+- Responsive dark-themed layout
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## Development
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+npm install
+npm run dev      # dev server at http://localhost:5173
+npm run build    # production build → dist/
+npm run preview  # preview the production build locally
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## Deployment
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+npm run deploy   # builds and pushes dist/ to the gh-pages branch
 ```
+
+Source lives on `main`; the built site is served from the `gh-pages` branch. GitHub Pages is configured accordingly in repo Settings → Pages.
+
+## Project Structure
+
+```
+src/
+├── components/   # Stateless UI presenters (Header, Footer, ProjectCard, etc.)
+├── pages/        # Route-level containers (Home, About, Projects, Contact)
+├── hooks/        # Data hooks (useGitHubRepos)
+├── data/         # Types, mappers, and featured project allowlist
+└── index.css     # @import "tailwindcss" (v4 syntax)
+```
+
+To change which projects are featured on the home page, edit [`src/data/featured.ts`](src/data/featured.ts).
