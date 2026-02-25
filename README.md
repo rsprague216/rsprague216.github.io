@@ -41,11 +41,14 @@ Source lives on `main`; the built site is served from the `gh-pages` branch. Git
 
 ```
 src/
-├── components/   # Stateless UI presenters (Header, Footer, ProjectCard, etc.)
-├── pages/        # Route-level containers (Home, About, Projects, Contact)
-├── hooks/        # Data hooks (useGitHubRepos)
-├── data/         # Types, mappers, and featured project allowlist
-└── index.css     # @import "tailwindcss" (v4 syntax)
+├── components/
+│   ├── layout/     # Header, Main (layout shell), Footer
+│   ├── home/       # HeroSection, FeaturedProjects
+│   └── projects/   # ProjectCard, ProjectCardSkeleton, ProjectGrid, ProjectFilter
+├── pages/          # Route-level containers (Home, About, Projects, Contact)
+├── hooks/          # Data hooks (useGitHubRepos)
+├── data/           # Types, mappers, and featured project allowlist
+└── index.css       # @import "tailwindcss" (v4 syntax)
 ```
 
 To change which projects are featured on the home page, edit [`src/data/featured.ts`](src/data/featured.ts).
